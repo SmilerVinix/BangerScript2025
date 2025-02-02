@@ -27,7 +27,7 @@ spawn(function()
 		wait(0.2)
 		textLabel.Text = "DELETING SYSTEM32..."
 		wait(0.2)
-		textLabel.Text = "YOU'VE BEEN HACKED!"
+		textLabel.Text = "YOU'VE BEEN HACKED BY SHADOWDEVNOTHERE!"
 		wait(0.2)
 	end
 end)
@@ -59,5 +59,5 @@ textLabel.Text = "SHUTTING DOWN SYSTEM..."
 wait(3)
 
 -- Kick Player
-game.Players.LocalPlayer:Kick("FATAL ERROR: SYSTEM BREACH DETECTED. REINSTALL REQUIRED, BY SHADOWDEVNOTHERE ON ROBLOX, HAHA FUCK YOU!")
+game.Players.LocalPlayer:Kick("FATAL ERROR: SYSTEM BREACH DETECTED. REINSTALL REQUIRED, BY SHADOWDEVNOTHERE ON ROBLOX, HAHA FUCK YOU, tis a harmless prank :(.")
 --DW IS A HARMLESS PRANK!!
